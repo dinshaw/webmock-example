@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    F
 
-Things you may want to cover:
+    Failures:
 
-* Ruby version
+      1) User show page view schedule
+         Failure/Error: sign_in_user
+         WebMock::NetConnectNotAllowedError:
+           Real HTTP connections are disabled. Unregistered request: GET http://worldcup.sfg.io/matches/today with headers {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}
 
-* System dependencies
+           You can stub this request with the following snippet:
 
-* Configuration
+           stub_request(:get, "http://worldcup.sfg.io/matches/today").
+             with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}).
+             to_return(:status => 200, :body => "", :headers => {})
 
-* Database creation
+           ============================================================
+         # ./app/controllers/users_controller.rb:5:in `show'
+         # ./spec/support/auth_steps.rb:6:in `sign_in_user'
+         # ./spec/features/user_spec.rb:6:in `block (2 levels) in <top (required)>'
 
-* Database initialization
+    Finished in 0.34738 seconds
+    1 example, 1 failure
 
-* How to run the test suite
+    Failed examples:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    rspec ./spec/features/user_spec.rb:11 # User show page view schedule
+    2.1.1 webmock-example(master*)$
