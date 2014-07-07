@@ -1,0 +1,22 @@
+[
+  {
+    "match_number": 61,
+    "location": "Foobar Stadium",
+    "datetime": "2014-07-08T17:00:00.000-03:00",
+    "status": "future",
+    "home_team": {
+      "country": "Zoo",
+      "code": "ZOO",
+      "goals": 0
+    },
+    "away_team": {
+      "country": "Car",
+      "code": "CAR",
+      "goals": 0
+    },
+    "winner": null,
+    "winner_code": null,
+    "home_team_events": [],
+    "away_team_events": []
+  }
+]

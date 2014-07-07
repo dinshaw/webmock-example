@@ -1,0 +1,29 @@
+%h1 Football Schedules
+%h2 Today
+.today
+  - if @today.empty?
+    %p No games today.
+  - else
+    %ul
+      - @today.each do |game|
+        %li
+          = game['home_team']['country']
+          vs
+          = game['away_team']['country']
+          at
+          = Time.parse(game['datetime']).to_s(:time)
+
+%h2 Tomorrow
+.tomorrow
+  - if @tomorrow.empty?
+    %p No games tomorrow.
+  - else
+    %ul
+      - @tomorrow.each do |game|
+        %li
+          = game['home_team']['country']
+          vs
+          = game['away_team']['country']
+          at
+          = Time.parse(game['datetime']).to_s(:time)
+

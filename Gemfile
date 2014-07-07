@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.2'
-gem 'sqlite3'
+gem 'pg'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -14,14 +14,14 @@ gem 'devise'
 gem 'twitter'
 
 group :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'database_cleaner'
-  gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
-  gem 'timecop'
-  gem 'webmock'
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'capybara', '~> 2.2.1'
+  gem 'poltergeist', '~> 1.5.0'
+  gem 'database_cleaner', '1.2.0'
+  gem 'selenium-webdriver', '2.41.0'
+  gem 'shoulda-matchers', '2.6.1'
+  gem 'timecop', '0.7.1'
+  gem 'webmock', '1.17.4'
 end
 
 group :test, :development do
