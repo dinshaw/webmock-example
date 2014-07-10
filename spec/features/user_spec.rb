@@ -1,17 +1,11 @@
 require 'feature_helper'
 
-feature 'User' do
-  before {
+feature 'Home page' do
+  before { sign_in_user }
 
-    sign_in_user
-    puts @user.email
-     }
-
-  context 'show page' do
-    scenario 'view schedule' do
-      visit '/'
-      expect(page).to have_content('Football Schedules')
-      expect(page).to have_content('Foo vs Bar')
-    end
+  scenario 'viewing schedule', driver: :selenium do
+    pause
+    expect(page).to have_content('Football Schedules')
+    expect(page).to have_content('Foo vs Bar')
   end
 end
